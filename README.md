@@ -1,6 +1,7 @@
 # 🎨 Personal Portfolio Website - Amr Khaled
 
 Link: https://amr-khaled-morsi.github.io/portfolio/
+
 A modern, responsive personal portfolio website built with **HTML5**, **CSS3**, **JavaScript**, and **Bootstrap 5**, featuring a comprehensive **Golden Ratio** design system with an elegant **monochrome black, grey, and white gradient** color palette.
 
 ![Portfolio Preview](https://img.shields.io/badge/Status-Complete-success)
