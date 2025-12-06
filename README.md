@@ -1,6 +1,6 @@
 # 🎨 Personal Portfolio Website - Amr Khaled
 
-A modern, responsive personal portfolio website built with **HTML5**, **CSS3**, **JavaScript**, and **Bootstrap 5**, featuring a comprehensive **Golden Ratio** design system derived from **Steel Blue** (#4682B4).
+A modern, responsive personal portfolio website built with **HTML5**, **CSS3**, **JavaScript**, and **Bootstrap 5**, featuring a comprehensive **Golden Ratio** design system with an elegant **monochrome black, grey, and white gradient** color palette.
 
 ![Portfolio Preview](https://img.shields.io/badge/Status-Complete-success)
 ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
@@ -31,7 +31,8 @@ This portfolio website showcases professional work, skills, and contact informat
 
 **Key Highlights:**
 - ✨ Golden Ratio-based design system
-- 🎨 Steel Blue color palette with mathematical color derivation
+- 🎨 Elegant monochrome black, grey, and white gradient palette
+- 📧 Functional contact form with EmailJS integration
 - 📱 Fully responsive on all devices
 - 🚀 Smooth animations and transitions
 - ♿ Accessible and semantic HTML
@@ -41,30 +42,31 @@ This portfolio website showcases professional work, skills, and contact informat
 
 ## 🎨 Design System
 
-### Color Palette (Golden Ratio Derivation)
+### Color Palette (Monochrome Gradient)
 
-All colors are mathematically derived from **Steel Blue (#4682B4)** using the Golden Ratio:
+The website features an elegant **monochrome color scheme** with black, grey, and white gradients, creating a sophisticated and timeless aesthetic:
 
-| Color Name | HEX Code | RGB Values | Usage | Derivation |
-|------------|----------|------------|-------|------------|
-| **Primary** (Steel Blue) | `#4682B4` | `rgb(70, 130, 180)` | Main brand color, buttons, accents | Base color |
-| **Secondary** (Light Steel Blue) | `#A4C8E1` | `rgb(164, 200, 225)` | Subtle backgrounds, hover states | Lightness × φ (79.3%) |
-| **Accent** (Deep Sky Blue) | `#2B7AC4` | `rgb(43, 122, 196)` | Call-to-action buttons, links | Saturation × φ (71.2%) |
-| **Dark** (Dark Steel Blue) | `#1F4766` | `rgb(31, 71, 102)` | Headers, dark backgrounds | Lightness ÷ φ (30.3%) |
-| **Light** (Very Light Blue) | `#D4E4F0` | `rgb(212, 228, 240)` | Section backgrounds, subtle fills | Background lightness |
-| **White** | `#FFFFFF` | `rgb(255, 255, 255)` | Text on dark backgrounds, cards | Pure white |
-| **Text** | `#2C3E50` | `rgb(44, 62, 80)` | Primary text color | Dark slate |
-| **Text Light** | `#5A6C7D` | `rgb(90, 108, 125)` | Secondary text, descriptions | Muted text |
+| Color Name | HEX Code | RGB Values | Usage |
+|------------|----------|------------|-------|
+| **Black** | `#000000` | `rgb(0, 0, 0)` | Primary backgrounds, headers, dark elements |
+| **Dark Grey** | `#1a1a1a` | `rgb(26, 26, 26)` | Secondary backgrounds, cards |
+| **Medium Grey** | `#333333` | `rgb(51, 51, 51)` | Borders, dividers |
+| **Light Grey** | `#666666` | `rgb(102, 102, 102)` | Secondary text, muted elements |
+| **Very Light Grey** | `#cccccc` | `rgb(204, 204, 204)` | Subtle backgrounds, hover states |
+| **Off-White** | `#f5f5f5` | `rgb(245, 245, 245)` | Light backgrounds, cards |
+| **White** | `#FFFFFF` | `rgb(255, 255, 255)` | Primary text on dark backgrounds, pure white elements |
 
-#### Color Derivation Formula
+#### Gradient Combinations
 
-```
-HSL Base: (207°, 44%, 49%)
+```css
+/* Hero Section Gradient */
+background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #333333 100%);
 
-Secondary: Lightness × φ = 49% × 1.618 ≈ 79.3%
-Accent: Saturation × φ = 44% × 1.618 ≈ 71.2%
-Dark: Lightness ÷ φ = 49% ÷ 1.618 ≈ 30.3%
-Light: Background calculation for optimal contrast
+/* Card Hover Effects */
+background: linear-gradient(to bottom, #f5f5f5, #ffffff);
+
+/* Accent Gradients */
+background: linear-gradient(90deg, #666666, #999999);
 ```
 
 ### Typography Scale (Golden Ratio)
@@ -129,9 +131,11 @@ Based on 1rem = 16px with φ = 1.618:
 ### 🔧 Interactive Features
 - Smooth scroll navigation
 - Active nav link highlighting
-- Form validation
+- **EmailJS integration** for functional contact form
+- Form validation with real-time feedback
 - Dynamic navbar on scroll
 - Hover effects and micro-animations
+- Email notifications sent to `amrkhaledwork9@gmail.com`
 
 ---
 
@@ -247,10 +251,12 @@ http-server -p 8000
 - 3D tilt effect on hover
 
 ### 5. **Contact**
+- **EmailJS integration** for sending emails
 - Bootstrap 5 form components
 - Floating labels
-- Form validation
-- Success/error messages
+- Real-time form validation
+- Success/error messages with visual feedback
+- Emails sent directly to `amrkhaledwork9@gmail.com`
 - Clean, accessible layout
 
 ### 6. **Footer**
@@ -269,12 +275,27 @@ Edit the CSS variables in `css/style.css`:
 
 ```css
 :root {
-    --color-primary: #4682B4;    /* Change your primary color */
-    --color-secondary: #A4C8E1;
-    --color-accent: #2B7AC4;
-    /* etc. */
+    --color-black: #000000;
+    --color-dark-grey: #1a1a1a;
+    --color-medium-grey: #333333;
+    --color-light-grey: #666666;
+    --color-white: #ffffff;
+    /* Customize gradients and other color values */
 }
 ```
+
+### Configuring EmailJS
+
+To set up the contact form with your own EmailJS account:
+
+1. Create a free account at [EmailJS](https://www.emailjs.com/)
+2. Create an email service and template
+3. Update the credentials in `js/script.js`:
+   ```javascript
+   emailjs.init('YOUR_PUBLIC_KEY');
+   ```
+4. Update the service and template IDs in the send function
+5. See `EMAILJS_SETUP_GUIDE.md` for detailed instructions
 
 ### Updating Content
 
@@ -340,7 +361,7 @@ Replace placeholder icons in project cards:
 
 This portfolio follows the **Golden Ratio (φ = 1.618)** principle consistently:
 
-1. **Color Harmony:** All colors derived from Steel Blue using φ
+1. **Color Harmony:** Monochrome palette with carefully balanced gradients
 2. **Typography:** Font sizes scale by φ for visual hierarchy
 3. **Spacing:** All margins and paddings use φ-based spacing
 4. **Layout:** Component proportions follow golden ratio
@@ -351,6 +372,13 @@ This portfolio follows the **Golden Ratio (φ = 1.618)** principle consistently:
 - Enhances visual hierarchy
 - Improves readability
 - Professional and timeless aesthetic
+
+**Why Monochrome?**
+- Timeless and sophisticated aesthetic
+- Excellent readability and contrast
+- Professional appearance
+- Focuses attention on content
+- Versatile and adaptable
 
 ---
 
@@ -371,11 +399,10 @@ This project is open source and available under the MIT License.
 
 ## 👤 Author
 
-**Amr Khaled**
-- Portfolio: [Your URL]
-- GitHub: [@yourusername](https://github.com/yourusername)
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourusername)
-- Email: amr@example.com
+**Amr Khaled Morsi**
+- Email: amrkhaledwork9@gmail.com
+- GitHub: [@amr-khaled-morsi](https://github.com/amr-khaled-morsi)
+- LinkedIn: [Amr Khaled Morsi](https://linkedin.com/in/amr-khaled-morsi)
 
 ---
 
@@ -398,6 +425,6 @@ If you have questions or need help:
 
 ---
 
-**Built with 💙 using the Golden Ratio design philosophy**
+**Built with 🖤 using the Golden Ratio design philosophy and monochrome aesthetics**
 
 *Last Updated: December 2025*
